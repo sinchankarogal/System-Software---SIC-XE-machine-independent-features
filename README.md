@@ -48,8 +48,9 @@ Pass 2
 
 
 ###	Algorithm
-Pass1: ![alt text](ER_diagram.jpg)
-Pass 2:![alt text](ER_diagram.jpg)
+Pass1: ![alt text](pass1.png)
+<br>
+Pass 2:![alt text](pass2.png)
  
 
 3.	Sample input and output cases
