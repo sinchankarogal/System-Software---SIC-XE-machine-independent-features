@@ -2,20 +2,10 @@
 
 
 
-
-TABLE OF CONTENTS
-
-1.	Introduction
-2.	Algorithms
-3.	 Code 
-4.	 Sample input and output cases 
-
-
-
-1.	Introduction
+###	Introduction
+   
 The Objective of the project is to implement a version of two-pass SIC/XE assembler: Pass 1 and Pass 2 for all instruction formats with expression independent feature.
 The Assembler we implemented includes all the SIC/XE instructions and supports all four formats 1, 2, 3, 4, addressing modes and program relocation.
-
 
 
 In SIC-XE  machine-Independent Assembler Features are-
@@ -26,17 +16,38 @@ In SIC-XE  machine-Independent Assembler Features are-
 •	Control Sections and Program Linking
 
 A Two-Pass assembler functions as follows-
-Pass 1
-•	Assign addresses to all statements in the program
-•	Save the values assigned to all labels for use in Pass 2
-•	Perform some processing of assembler directives
-Pass 2
-•	Assemble instructions
-•	Generate data values defined by BYTE, WORD
-•	Perform processing of assembler directives not done in Pass 1
-•	Write the object program and the assembly listing
+<br>
+<br>
 
-2.	Algorithm
+Pass 1
+<br>
+•	Assign addresses to all statements in the program
+<br>
+
+•	Save the values assigned to all labels for use in Pass 2
+<br>
+
+•	Perform some processing of assembler directives
+<br>
+<br>
+
+Pass 2
+<br>
+
+•	Assemble instructions
+<br>
+
+•	Generate data values defined by BYTE, WORD
+<br>
+
+•	Perform processing of assembler directives not done in Pass 1
+<br>
+
+•	Write the object program and the assembly listing
+<br>
+
+
+###	Algorithm
 Pass1:
 Pass 2:
  
@@ -158,13 +169,70 @@ Line	Address	Label	OPCODE	OPERAND	Comment
 270	0001B	0	*	=X'05'	 	
 ```
 Symbol table generated:
+
+```asm
+**********************************SYMBOL TABLE*****************************
+
+:-	name:undefined	|address:0	|relative:00000 
+
+:-	name:undefined	|address:0	|relative:00000 
+0:-	name:	|address:0	|relative:00000 
+BUFEND:-	name:BUFEND	|address:00000	|relative:00000 
+BUFFER:-	name:BUFFER	|address:00030	|relative:00001 
+BUFFER:-	name:undefined	|address:0	|relative:00000 
+CLOOP:-	name:CLOOP	|address:00003	|relative:00001 
+ENDFIL:-	name:ENDFIL	|address:00017	|relative:00001 
+EXIT:-	name:EXIT	|address:01050	|relative:00001 
+FIRST:-	name:FIRST	|address:00000	|relative:00001 
+INPUT:-	name:INPUT	|address:01054	|relative:00001 
+LENGTH:-	name:LENGTH	|address:0002D	|relative:00001 
+MAXLEN:-	name:MAXLEN	|address:00000	|relative:00000 
+RDREC:-	name:RDREC	|address:01030	|relative:00001 
+RETADR:-	name:RETADR	|address:0002A	|relative:00001 
+RLOOP:-	name:RLOOP	|address:01039	|relative:00001 
+WLOOP:-	name:WLOOP	|address:0105E	|relative:00001 
+WRREC:-	name:WRREC	|address:01058	|relative:00001 
+```
  
 
 Literal table generated:
- 
+
+```asm
+**********************************LITERAL TABLE*****************************
+
+C'EOF':-value:C'EOF'|address:01070 
+X'05':-	value:X'05'|address:01074 
+
+```
+
+
+EXTREF table generated:
+
+```asm
+**********************************EXTREF TABLE*****************************
+
+BUFFEND:-name:BUFFEND|DEFAULT 
+BUFFER:-name:BUFFER	|DEFAULT 
+LENGTH:-name:LENGTH	|DEFAULT 
+RDREC:-	name:RDREC	|DEFAULT 
+WRREC:-	name:WRREC      |DEFAULT 
+
+```
 
 
 
+EXTDEF table generated:
+
+
+
+**********************************EXTDEF TABLE*****************************
+
+```asm
+BUFEND:-	name:BUFEND |address:01030	| 
+BUFFER:-	name:BUFFER |address:00030	| 
+LENGTH:-	name:LENGTH |address:00030	|
+
+```
 
 
  
