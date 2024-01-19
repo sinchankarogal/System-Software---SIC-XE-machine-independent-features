@@ -223,11 +223,11 @@ WRREC:-	name:WRREC      |DEFAULT
 
 EXTDEF table generated:
 
-
+```asm
 
 **********************************EXTDEF TABLE*****************************
 
-```asm
+
 BUFEND:-	name:BUFEND |address:01030	| 
 BUFFER:-	name:BUFFER |address:00030	| 
 LENGTH:-	name:LENGTH |address:00030	|
